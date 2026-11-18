@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="New Tech Group of Institute — learn practical skills, build confidence, and prepare for your future.">
+  <title>New Tech Group of Institute</title>
+  <style>
+    :root{--navy:#101b3f;--blue:#315efb;--cyan:#22c7d6;--ink:#17213b;--muted:#64708b;--pale:#f4f7ff;--white:#fff}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);line-height:1.6;background:#fff}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1120px,92%);margin:auto}
+    .topbar{background:var(--navy);color:#dce5ff;font-size:.86rem;padding:8px 0}
+    .topbar .container{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    header{position:sticky;top:0;z-index:20;background:#ffffffed;backdrop-filter:blur(12px);border-bottom:1px solid #e9edfa}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:850;letter-spacing:-.5px;color:var(--navy)}
+    .brand-mark{width:43px;height:43px;border-radius:14px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:grid;place-items:center;color:#fff;font-size:1.15rem;box-shadow:0 8px 20px #315efb40}
+    .brand small{display:block;font-size:.68rem;color:var(--muted);font-weight:650;letter-spacing:1.4px;text-transform:uppercase}
+    .nav-links{display:flex;align-items:center;gap:27px;font-size:.94rem;font-weight:650}
+    .nav-links a:hover{color:var(--blue)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:12px;padding:12px 19px;background:var(--blue);color:#fff;font-weight:750;cursor:pointer;transition:.2s;box-shadow:0 8px 20px #315efb30}
+    .btn:hover{transform:translateY(-2px);background:#204be8}
+    .btn-outline{background:transparent;color:var(--navy);border:1px solid #d9e0f2;box-shadow:none}
+    .menu-btn{display:none;background:none;border:0;font-size:1.7rem;color:var(--navy);cursor:pointer}
+    .hero{position:relative;overflow:hidden;background:radial-gradient(circle at 85% 20%,#4e72ff55,transparent 27%),linear-gradient(120deg,#101b3f 0%,#172d68 58%,#1b5a83 100%);color:white;padding:94px 0 100px}
+    .hero:after{content:"";position:absolute;width:460px;height:460px;border:1px solid #ffffff20;border-radius:50%;right:-130px;bottom:-270px;box-shadow:0 0 0 55px #ffffff08,0 0 0 110px #ffffff06}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:55px;position:relative;z-index:1}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;color:#b9f7ff;background:#ffffff12;border:1px solid #ffffff24;padding:7px 12px;border-radius:99px;font-size:.8rem;font-weight:750;letter-spacing:.5px}
+    h1{font-size:clamp(2.55rem,5.4vw,4.65rem);line-height:1.08;letter-spacing:-2.5px;margin:22px 0}
+    h1 span{color:#66e5ef}
+    .hero p{color:#d5def7;max-width:570px;font-size:1.08rem}
+    .hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+    .hero .btn-outline{color:white;border-color:#ffffff65}
+    .hero-card{background:linear-gradient(145deg,#ffffff20,#ffffff09);border:1px solid #ffffff35;border-radius:28px;padding:27px;box-shadow:0 25px 70px #050d2d55;transform:rotate(2deg)}
+    .visual{min-height:310px;border-radius:20px;background:linear-gradient(145deg,#d9faff,#dce4ff);display:grid;place-items:center;position:relative;overflow:hidden;color:var(--navy)}
+    .visual .orb{width:175px;height:175px;border-radius:50%;background:linear-gradient(135deg,#315efb,#22c7d6);display:grid;place-items:center;color:white;font-size:4.2rem;box-shadow:0 22px 45px #315efb55}
+    .float-tag{position:absolute;background:#fff;padding:11px 14px;border-radius:13px;box-shadow:0 10px 30px #16285a20;font-weight:800;font-size:.82rem}
+    .tag-one{top:25px;left:18px}.tag-two{bottom:24px;right:16px}
+    .hero-card-foot{display:flex;justify-content:space-between;gap:12px;color:#e1eaff;font-size:.84rem;margin-top:20px}
+    section{padding:82px 0}
+    .section-head{text-align:center;max-width:680px;margin:0 auto 42px}
+    .kicker{color:var(--blue);font-weight:850;text-transform:uppercase;letter-spacing:1.8px;font-size:.75rem}
+    h2{font-size:clamp(2rem,3.7vw,2.9rem);line-height:1.15;letter-spacing:-1.2px;margin:10px 0 13px;color:var(--navy)}
+    .section-head p,.muted{color:var(--muted)}
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:55px;align-items:center}
+    .about-art{background:linear-gradient(145deg,#eaf0ff,#e4fbff);border-radius:25px;min-height:340px;display:grid;place-items:center;position:relative;overflow:hidden}
+    .about-art .big-icon{font-size:7rem;filter:drop-shadow(0 15px 15px #315efb30)}
+    .about-art:before,.about-art:after{content:"";position:absolute;border:1px solid #315efb25;border-radius:50%;width:260px;height:260px}
+    .about-art:after{width:340px;height:340px}
+    .about-copy h2{margin-top:8px}
+    .about-copy p{color:var(--muted);margin:15px 0}
+    .checks{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+    .check{font-weight:700;font-size:.92rem}.check:before{content:"✓";display:inline-grid;place-items:center;width:23px;height:23px;border-radius:50%;background:#e4f9f4;color:#0c9b77;margin-right:8px}
+    .features{background:var(--pale)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{background:#fff;border:1px solid #e9edfa;border-radius:20px;padding:26px;transition:.22s}
+    .card:hover{transform:translateY(-6px);box-shadow:0 18px 38px #1a2d6812}
+    .card-icon{width:52px;height:52px;border-radius:15px;background:#edf1ff;display:grid;place-items:center;font-size:1.55rem;margin-bottom:18px}
+    .card h3{color:var(--navy);margin-bottom:8px;font-size:1.13rem}
+    .card p{color:var(--muted);font-size:.94rem}
+    .stats{background:linear-gradient(110deg,#315efb,#1b9fb7);color:#fff;padding:48px 0}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+    .stat strong{display:block;font-size:2.25rem;line-height:1.2}.stat span{font-size:.9rem;color:#e4f7ff}
+    .course-categories{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:stretch}
+    .course-category{background:#fff;border:1px solid #e4eaf8;border-radius:22px;padding:25px;box-shadow:0 12px 32px #1a2d680c;min-width:0;transition:transform .2s,box-shadow .2s}
+    .course-category:hover{transform:translateY(-5px);box-shadow:0 18px 38px #1a2d6818}
+    .category-heading{display:flex;align-items:center;gap:13px;margin-bottom:17px}
+    .category-icon{width:54px;height:54px;flex:0 0 54px;border-radius:16px;background:linear-gradient(135deg,#eaf0ff,#e7fbff);display:grid;place-items:center;font-size:1.7rem}
+    .category-heading h3{color:var(--navy);font-size:1.12rem;line-height:1.3}
+    .category-heading p{color:var(--muted);font-size:.82rem;margin-top:3px}
+    .course-list{display:grid;gap:11px}
+    .course-item{border:1px solid #edf0f8;border-radius:13px;padding:12px 14px;background:#fbfcff;min-width:0}
+    .course-item strong{display:block;color:var(--navy);font-size:.96rem}
+    .course-item span{display:block;color:var(--muted);font-size:.83rem;line-height:1.45;margin-top:3px}
+    .category-enquire{display:inline-flex;margin-top:17px;color:var(--blue);font-weight:800;font-size:.9rem}
+    .established-badge{display:inline-flex;align-items:center;gap:8px;background:#eaf8ff;color:#14527a;border:1px solid #ccecf8;border-radius:999px;padding:8px 14px;font-size:.88rem;font-weight:800;margin-top:8px}
+    .cta{padding:0 0 82px}
+    .cta-box{border-radius:26px;padding:48px;background:linear-gradient(115deg,#101b3f,#244b9a);color:white;display:flex;align-items:center;justify-content:space-between;gap:25px}
+    .cta-box h2{color:white;margin:0 0 8px}.cta-box p{color:#d5def7}
+    .contact{background:var(--pale)}
+    .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:35px}
+    .contact-info{background:var(--navy);color:white;padding:30px;border-radius:22px}
+    .contact-info h3{font-size:1.45rem;margin-bottom:12px}
+    .contact-info p{color:#d5def7;margin-bottom:24px}
+    .contact-line{padding:13px 0;border-top:1px solid #ffffff25;color:#e6edff}
+    form{background:#fff;padding:30px;border:1px solid #e8edfa;border-radius:22px;display:grid;gap:14px}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    input,textarea,select{width:100%;padding:13px 14px;border:1px solid #dce3f1;border-radius:10px;font:inherit;outline:none;background:#fff}
+    input:focus,textarea:focus,select:focus{border-color:var(--blue);box-shadow:0 0 0 3px #315efb18}
+    textarea{min-height:120px;resize:vertical}
+    footer{background:#0b1431;color:#d5def7;padding:28px 0}
+    footer .container{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font-size:.88rem}
+    footer strong{color:#fff}
+    @media(max-width:850px){.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.course-categories{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding:70px 0}.hero-card{max-width:520px;margin:auto}.cards{grid-template-columns:repeat(2,1fr)}.nav-links{gap:16px}}
+    @media(max-width:650px){
+      .topbar .container{justify-content:center;text-align:center}.nav{height:68px}.menu-btn{display:block}
+      .nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:#fff;padding:18px 5%;border-bottom:1px solid #e9edfa;flex-direction:column;align-items:stretch;gap:0}
+      .nav-links.open{display:flex}.nav-links a{padding:12px 0;border-bottom:1px solid #f0f2f8}.nav-links .btn{margin-top:12px}
+      .hero{padding:60px 0 70px}h1{letter-spacing:-1.5px}.hero-card{padding:16px}.visual{min-height:245px}.cards{grid-template-columns:1fr}.course-categories{grid-template-columns:1fr}.course-category{padding:21px}.stats-grid{grid-template-columns:1fr 1fr;row-gap:28px}
+      section{padding:65px 0}.checks{grid-template-columns:1fr}.cta-box{padding:30px;display:block}.cta-box .btn{margin-top:20px}.form-row{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar"><div class="container"><span>✦ Established in 2006 · 20 Years of Learning & Growth</span><span>New Tech Group of Institute · Welcome to your future</span></div></div>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home"><span class="brand-mark">NT</span><span>NEW TECH GROUP<small>OF INSTITUTE</small></span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a><a href="#about">About</a><a href="#programs">Programs</a><a href="#why-us">Why Us</a><a href="#contact">Contact</a>
+        <a class="btn" href="#contact">Enquire Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">✦ BUILD SKILLS · BUILD YOUR FUTURE</span>
+          <h1>Learn Skills.<br><span>Shape Your Future.</span></h1>
+          <p>Welcome to New Tech Group of Institute — a place to explore new opportunities, strengthen your knowledge, and turn your ambitions into action.</p>
+          <div class="hero-actions"><a class="btn" href="#programs">Explore Programs&nbsp; →</a><a class="btn btn-outline" href="#about">Discover Our Institute</a></div>
+        </div>
+        <div class="hero-card">
+          <div class="visual"><span class="float-tag tag-one">💡 Learn something new</span><div class="orb">✦</div><span class="float-tag tag-two">🚀 Grow with confidence</span></div>
+          <div class="hero-card-foot"><span>Practical learning</span><span>Future focused</span><span>Student first</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div class="about-art"><div class="big-icon">🎓</div></div>
+        <div class="about-copy"><span class="kicker">Who we are</span><h2>Learning that moves you forward.</h2>
+          <p>Since 2006, New Tech Group of Institute has been helping learners build a strong foundation and develop practical skills for a changing world. We believe education should be engaging, practical, and connected to real opportunities.</p>
+          <p>Our aim is to create a supportive learning environment where every student can ask questions, discover strengths, and keep improving.</p>
+          <div class="checks"><div class="check">Supportive environment</div><div class="check">Skill-based learning</div><div class="check">Focused guidance</div><div class="check">Growth mindset</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="why-us">
+      <div class="container">
+        <div class="section-head"><span class="kicker">The learning experience</span><h2>Why choose New Tech Group?</h2><p>A positive place to learn, practise, and prepare for what comes next.</p></div>
+        <div class="cards">
+          <article class="card"><div class="card-icon">🧠</div><h3>Strong Fundamentals</h3><p>Build clear concepts and a solid foundation through structured learning.</p></article>
+          <article class="card"><div class="card-icon">🛠️</div><h3>Practical Approach</h3><p>Connect ideas with practice and develop skills you can use in real situations.</p></article>
+          <article class="card"><div class="card-icon">🤝</div><h3>Guidance & Support</h3><p>Learn in a welcoming environment where questions and progress matter.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <div class="stats"><div class="container stats-grid">
+      <div class="stat"><strong>01</strong><span>Keep learning</span></div><div class="stat"><strong>02</strong><span>Build practical skills</span></div><div class="stat"><strong>03</strong><span>Grow with guidance</span></div><div class="stat"><strong>∞</strong><span>Possibilities ahead</span></div>
+    </div></div>
+
+    <section class="courses" id="programs">
+      <div class="container">
+        <div class="section-head"><span class="kicker">Our Courses</span><h2>Explore Our Professional Courses</h2><p>Choose the right course to build your computer knowledge, practical skills, and career opportunities.</p></div>
+        <div class="course-categories">
+          <article class="course-category">
+            <div class="category-heading"><div class="category-icon">🖥️</div><div><h3>Computer Fundamentals & Diplomas</h3><p>Build a strong foundation in computer applications</p></div></div>
+            <div class="course-list">
+              <div class="course-item"><strong>CCC</strong><span>Computer basics, internet, digital services and office applications.</span></div>
+              <div class="course-item"><strong>DCA</strong><span>Diploma in Computer Applications with practical computer skills.</span></div>
+              <div class="course-item"><strong>ADCA</strong><span>Advanced computer applications and office productivity.</span></div>
+              <div class="course-item"><strong>O Level</strong><span>IT tools, programming concepts and practical computer education.</span></div>
+            </div>
+            <a class="category-enquire" href="#contact">Enquire about these courses →</a>
+          </article>
+          <article class="course-category">
+            <div class="category-heading"><div class="category-icon">📊</div><div><h3>Accounting & Office Skills</h3><p>Learn tools used in offices and businesses</p></div></div>
+            <div class="course-list">
+              <div class="course-item"><strong>Tally Prime</strong><span>Accounting, bookkeeping and maintaining business financial records.</span></div>
+              <div class="course-item"><strong>Advanced Excel</strong><span>Formulas, spreadsheets, charts, data handling and analysis.</span></div>
+            </div>
+            <a class="category-enquire" href="#contact">Enquire about these courses →</a>
+          </article>
+          <article class="course-category">
+            <div class="category-heading"><div class="category-icon">💻</div><div><h3>Programming & Web Designing</h3><p>Develop coding and website creation skills</p></div></div>
+            <div class="course-list">
+              <div class="course-item"><strong>C Programming</strong><span>Programming logic, operators, loops, arrays and functions.</span></div>
+              <div class="course-item"><strong>Python Programming</strong><span>Python fundamentals and problem-solving skills.</span></div>
+              <div class="course-item"><strong>Web Designing</strong><span>HTML, CSS and JavaScript for attractive, responsive websites.</span></div>
+            </div>
+            <a class="category-enquire" href="#contact">Enquire about these courses →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="cta"><div class="container"><div class="cta-box"><div><h2>Your next chapter starts here.</h2><p>Have a question about learning opportunities? Get in touch with our team.</p></div><a class="btn" href="#contact">Contact the Institute&nbsp; →</a></div></div></div>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-head"><span class="kicker">Get in touch</span><h2>Let's start a conversation.</h2><p>Send an enquiry and the institute team can get back to you.</p></div>
+        <div class="contact-grid">
+          <div class="contact-info"><h3>New Tech Group of Institute</h3><p>We'd be happy to help you learn more about the institute and its programs.</p>
+            <div class="contact-line">📍 Marehra, Etah, Uttar Pradesh, India <em style="font-size:.78rem;display:block;color:#aebde4"></em></div>
+            <div class="contact-line">📞 9897080541, 7417682154 </div>
+            <div class="contact-line">✉️ newtechitgroup@gmail.com</div>
+          
+          </div>
+          <form id="enquiryForm">
+            <div class="form-row"><input type="text" id="name" placeholder="Your name" required><input type="tel" id="phone" placeholder="Phone number" required></div>
+            <input type="email" id="email" placeholder="Email address">
+            <select id="interest"><option value="">Select your area of interest</option><option>CCC</option><option>DCA</option><option>ADCA</option><option>O Level</option><option>Tally Prime</option><option>C Programming</option><option>Python Programming</option><option>Web Designing</option><option>Advanced Excel</option><option>Other</option></select>
+            <textarea id="message" placeholder="Write your message..." required></textarea>
+            <button class="btn" type="submit">Send Enquiry&nbsp; →</button>
+            <p id="formNote" class="muted" style="font-size:.82rem">Demo form: connect this form to your email or backend before publishing.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container"><span>© <span id="year"></span> <strong>New Tech Group of Institute.</strong> All rights reserved.</span><span>Designed with purpose. Built for learning.</span></div></footer>
+  <script>
+    const menuBtn=document.getElementById('menuBtn');
+    const navLinks=document.getElementById('navLinks');
+    menuBtn.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',open);menuBtn.textContent=open?'×':'☰';});
+    navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{navLinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='☰';}));
+    document.getElementById('year').textContent=new Date().getFullYear();
+    document.getElementById('enquiryForm').addEventListener('submit',e=>{e.preventDefault();document.getElementById('formNote').textContent='Thanks! This demo form is not connected yet. Add a form service or backend to receive enquiries.';});
+  </script>
+</body>
+</html>
